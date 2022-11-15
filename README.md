@@ -1,16 +1,26 @@
 # magic_workout
 
-A new Flutter project.
+A starting point for creating robust, highly scalable and testable flutter apps.
 
-## Getting Started
+## Architecture
 
-This project is a starting point for a Flutter application.
+Implemented Clean Architecture with Bloc.
 
-A few resources to get you started if this is your first Flutter project:
+![image](https://user-images.githubusercontent.com/25193983/112195232-b8665d80-8c2f-11eb-83cb-e362b8bff420.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Third party packges used
+`flutter_bloc` for State Management
+`flutter_hooks` for Lifecycle Management and avoiding Statefull Widget
+`objectbox` for Local Storage
+`equatable` for Data Class support
+`get_it` for dependency injection
+`form_field_validator` for validating form fileds 
+`bloc_test` and `mockito` for testing 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# How to run
+
+run `flutter pub get`
+run `flutter pub run build_runner build --delete-conflicting-outputs`
+
+`flutter run`
