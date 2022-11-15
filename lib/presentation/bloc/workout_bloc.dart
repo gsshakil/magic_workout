@@ -28,7 +28,7 @@ class WorkoutBloc extends Bloc<WorkoutEvent, WorkoutState> {
       Either<Failure, Stream<List<WorkoutEntity?>>> result =
           getWorkoutsUsecase();
       result.fold((l) => emit(WorkoutFalure(message: l.message)), (r) {
-        emit(GetWorkoutSSuccess(workouts: r));
+        emit(GetWorkoutsSuccess(workouts: r));
       });
     });
 
@@ -42,6 +42,7 @@ class WorkoutBloc extends Bloc<WorkoutEvent, WorkoutState> {
     });
 
     on<InsertWorkout>((event, emit) {
+      emit(WorkoutLoading());
       Either<Failure, int> result =
           insertWorkoutUsecase(workout: event.workout);
       result.fold((l) => emit(WorkoutFalure(message: l.message)), (r) {
@@ -50,6 +51,7 @@ class WorkoutBloc extends Bloc<WorkoutEvent, WorkoutState> {
     });
 
     on<RemoveWorkout>((event, emit) {
+      emit(WorkoutLoading());
       Either<Failure, bool> result = removeWorkoutUsecase(id: event.id);
       result.fold((l) => emit(WorkoutFalure(message: l.message)), (r) {
         add(GetWorkouts());

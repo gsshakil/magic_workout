@@ -16,9 +16,9 @@ class WorkoutFalure extends WorkoutState {
   const WorkoutFalure({required this.message});
 }
 
-class GetWorkoutSSuccess extends WorkoutState {
+class GetWorkoutsSuccess extends WorkoutState {
   final Stream<List<WorkoutEntity?>> workouts;
-  const GetWorkoutSSuccess({required this.workouts});
+  const GetWorkoutsSuccess({required this.workouts});
 }
 
 class GetWorkoutDetailsSuccess extends WorkoutState {

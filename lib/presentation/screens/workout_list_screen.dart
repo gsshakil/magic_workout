@@ -29,7 +29,7 @@ class WorkoutListScreen extends StatelessWidget {
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
-              } else if (state is GetWorkoutSSuccess) {
+              } else if (state is GetWorkoutsSuccess) {
                 return StreamBuilder<List<WorkoutEntity?>>(
                   stream: state.workouts,
                   builder: ((context, snapshot) {
